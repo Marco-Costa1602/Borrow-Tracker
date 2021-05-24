@@ -1,0 +1,49 @@
+﻿@model IEnumerable<GroceryStore.Models.Item>
+@{
+    ViewData["Title"] = "Index";
+
+}
+
+
+<div class="container p-3">
+    <div class="row pt-4">
+        <div class="col-6">
+            <h2 class="item-h1Title">Borrowed Items</h2>
+        </div>
+        <div class="col-6">
+            <a asp-controller="Item" asp-action="Create" class="btn btn-info w-75">Create New Item</a>
+        </div>
+    </div>
+</div>
+
+
+@if (Model.Count() > 0)
+{
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th scope="col">ID</th>
+                <th scope="col">Item Name</th>
+                <th scope="col">Borrower</th>
+                <th scope="col">Lender</th>
+                <th scope="col">Delete</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td width="10%">@item.Id</td>
+                    <td width="25%">@item.ItemName</td>
+                    <td width="20%">@item.Borrower</td>
+                    <td width="20%">@item.Lender</td>
+                    <td width="15%"><a asp-controller="Item" asp-action="Delete" asp-route-Id="@item.Id" class="delete-entry">Delete</a></td>
+                </tr>                                                       <!-- Button made to reddirect the user to a delete page, using the item id as a url parameter-->
+            }
+        </tbody>
+    </table>
+}
+else
+{
+    <h2>No items were added to the list.</h2> <!-- In case there are no items added to the list-->
+}

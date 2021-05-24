@@ -1,0 +1,8 @@
+{
+  "runtimeOptions": {
+    "additionalProbingPaths": [
+      "C:\\Users\\kanbi\\.dotnet\\store\\|arch|\\|tfm|",
+      "C:\\Users\\kanbi\\.nuget\\packages"
+    ]
+  }
+}

@@ -1,0 +1,18 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+
+
+<section class="py-5 text-center container" id="index-circle">
+    <div class="row py-lg-5">
+        <div class="col-lg-6 col-md-8 mx-auto">
+            <h1 class="fw-light">Borrow List</h1>
+            <p class="lead text-muted" id="index-p">This page was created with the intention of being a simple solution for tracking borrowed items.</p>
+            <p>
+                <a asp-controller="Item" asp-action="Create" class="btn btn-primary my-2">Create new item </a>
+                <a asp-controller="Item" asp-action="Index" class="btn btn-secondary my-2">List Existing Items</a>
+            </p>
+        </div>
+    </div>
+</section>
